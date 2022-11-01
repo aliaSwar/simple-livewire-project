@@ -16,10 +16,13 @@
 </head>
 
 <body>
-    <div class="container mx-auto">
+    <br>
+    <div class="container max-auto flex justify-center">
+        <div class="box-border   w-1/2 p-4 border-4 border-gray-400 bg-gray-200">
 
 
-        {{ $slot }}
+            {{ $slot }}
+        </div>
     </div>
     @livewireScripts
 </body>

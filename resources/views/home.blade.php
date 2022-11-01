@@ -4,6 +4,7 @@
 
         <div>
             <br>
-            <livewire:add-task />
+            @livewire('add-task')
+
 
 </x-layouts.app>
