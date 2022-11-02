@@ -9,15 +9,18 @@ class AddTask extends Component
 {
     public  $name;
 
-
+    public function updated($faild)
+    {
+        $this->validateOnly($faild, ['name' => 'string|required|max:255|min:4']);
+    }
 
     public function store()
     {
 
 
-        $this->validate(['name' => 'string|required|max:255']);
+        $this->validate(['name' => 'string|required|max:255|min:4']);
 
-        $task = Task::create([
+        Task::create([
             'name'       => $this->name,
             'user_id'    => auth()->id()
         ]);
@@ -25,9 +28,14 @@ class AddTask extends Component
 
         session()->flash('message', 'Task added successfully 😁');
     }
+    public function remove($task)
+    {
+        dd($task);
+    }
+
     public function render()
     {
 
-        return view('livewire.add-task', ['tasks' => Task::all()]);
+        return view('livewire.add-task', ['tasks' => Task::latest()->get()]);
     }
 }
