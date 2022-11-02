@@ -10,16 +10,21 @@
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <!-- Font Awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     @vite('resources/css/app.css')
     @livewireStyles
 
 </head>
 
 <body>
-    <div class="container mx-auto">
+    <br>
+    <div class="container max-auto flex justify-center">
+        <div class="box-border   w-1/2 p-4 border-4 border-gray-400 bg-gray-200">
 
 
-        {{ $slot }}
+            {{ $slot }}
+        </div>
     </div>
     @livewireScripts
 </body>
